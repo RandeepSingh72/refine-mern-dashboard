@@ -59,7 +59,7 @@ function App() {
       const profileObj = credential ? parseJwt(credential) : null;
 
       if (profileObj) {
-        const response = await fetch('http://localhost:8080/api/v1/users', {
+        const response = await fetch('https://refine-mern-dashboard.vercel.app/api/v1/users', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -154,7 +154,7 @@ function App() {
           <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
           <RefineSnackbarProvider>
             <Refine
-              dataProvider={dataProvider("http://localhost:8080/api/v1")}
+              dataProvider={dataProvider("https://refine-mern-dashboard.vercel.app/api/v1")}
               notificationProvider={notificationProvider}
               routerProvider={routerBindings}
               authProvider={authProvider}
@@ -174,8 +174,6 @@ function App() {
                 {
                   name: "agents",
                   list: "/agents",
-                  create: "/blog-posts/create",
-                  edit: "/blog-posts/edit/:id",
                   show: "/agents/show/:id",
                   icon: <PeopleAltOutlined/>,
                   meta: {
@@ -185,8 +183,6 @@ function App() {
                 {
                   name: "my-profile",
                   list: "/my-profile",
-                  create: "/blog-posts/create",
-                  edit: "/blog-posts/edit/:id",
                   show: '/my-profile/properties/show/:id',
                   options:{
                     label:'My Profile'
