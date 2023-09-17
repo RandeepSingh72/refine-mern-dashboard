@@ -59,7 +59,7 @@ function App() {
       const profileObj = credential ? parseJwt(credential) : null;
 
       if (profileObj) {
-        const response = await fetch('https://refine-mern-dashboard.vercel.app/api/v1/users', {
+        const response = await fetch('https://refine-dashboard-zo4n.onrender.com/api/v1/users', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -154,7 +154,7 @@ function App() {
           <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
           <RefineSnackbarProvider>
             <Refine
-              dataProvider={dataProvider("https://refine-mern-dashboard.vercel.app/api/v1")}
+              dataProvider={dataProvider("https://refine-dashboard-zo4n.onrender.com/api/v1")}
               notificationProvider={notificationProvider}
               routerProvider={routerBindings}
               authProvider={authProvider}
